@@ -1,0 +1,310 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dosis', sans-serif;
+}
+
+header{
+    position: relative;
+    width: 100%;
+    height: 96vh;
+    padding: 0;
+    background-image: url("../Images/tennis.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+nav{
+    width: 100%;
+    height: 3vh;
+    padding: 2.3em 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.divLogo img{
+    height: 2em;
+    width: 5.5em;
+}
+
+.divLinks svg{
+    fill:#ffffff;
+    margin-left: 0.3em;
+    font-size: 0.8em;
+}
+
+.divIcons svg{
+    fill:#ffffff;
+    height: 3vh;
+    width: 3.5em;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: white;
+    padding-right: 4em;
+    font-size: 18px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 1.1vw;
+    font-weight: bold;
+}
+.divLinks{
+    padding-left: 3.5em;
+}
+
+
+.divLinks ul > li{
+    padding-top: 0.4em;
+}
+
+.divLinks li ul{
+    display: none;
+    position: absolute;
+    text-align: center;
+    padding-top: 0.3em;
+}
+
+.btn{
+    font-size: 1.3em;
+    float: right;
+    cursor: pointer;
+    display: none;
+}
+
+#click{
+    display: none;
+}
+
+@media (max-width:952px){
+    .divIcons svg{
+        fill:#ffffff;
+        height: 3vh;
+        width: 3em;
+    }
+    .divLogo img{
+        height: 1em;
+        width: 4.5em;
+    }
+    nav ull li a{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px){
+    .btn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: lightgray;
+        top: 4.5em;
+        left: -100%;
+        text-align: center; 
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 8vh;
+
+    }
+    nav ul li a{
+        font-size: 3vw;
+        color: #004346;
+    }
+    .divIcons svg{
+        fill:#ffffff;
+        height: 1.3em;
+        width: 1.3em;
+        margin-left: 0.8em;
+    }
+    .divLinks svg{
+        fill:#004346;
+        margin-left: 0.3em;
+        font-size: 0.8em;
+    }
+    .divLogo img{
+        height: 1.5em;
+        width: 4.5em;
+        margin-left: 3.5em;
+    }
+    nav li:hover > ul{
+        display: block;
+    }
+    nav li:hover{
+        transform: scale(1.1);
+    }
+    nav a:hover{
+        text-decoration: underline;
+    }
+    #about:active ~ ul{
+        left: -100%;
+    }
+    #click:checked ~ ul{
+        left: 0;
+    }
+}
+
+.divTitle{  
+    margin-top: 10%;
+    padding-left: 3.6em;
+}   
+
+header h1{
+    font-size: 4.7vw;
+    color: white;
+    text-align: left;
+}
+
+header h2{
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    font-size: 2.5vw;
+    color: white;
+    text-align: left;
+}
+main{
+    width: 100%;
+    background-color: white;
+}
+
+section{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 4em;
+}
+
+.divAbout, .divMision, .divVision{
+    display: flex;
+    flex-flow: column wrap;
+    overflow: hidden;
+    padding: 2em;
+    margin-bottom: 2em;
+    margin-left: 1.2em;
+    border: 1.3em lightgray solid;
+    text-align: center;
+    align-items: center;
+    justify-content: start;
+    background-color: white;
+    width: 20em;
+    min-height: 26em;
+}
+
+.divCircle{
+    height: 3.5em;
+    width: 3.5em;
+    background-color: #694B34;
+    border-radius: 50%;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    overflow: hidden;
+}
+
+.divMision img{
+    margin-top: 1em;
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.divVision img{
+    margin-top: 0.5em;
+    height: 2.5em;
+    width: 2.5em;
+}
+
+.divAbout img{
+    margin-top: 0.9em;
+    height: 1.7em;
+    width: 2em;
+}
+main section a{
+    color: #694B34;
+    font-weight: bold;
+}
+
+footer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: #694b34;
+    padding: 3em;
+    width: 100%;
+    min-height: 15em;
+    color: white;
+    text-align: justify;
+    font-size: 1em;
+}
+
+footer img{
+    height: 2em;
+    width: 7em;
+    margin-bottom: 2em;
+}
+
+.divContact p{
+    padding-bottom: 0.5em;
+    width: 41em;
+}
+.divInfo{
+    margin-top: 2em;
+    width: 41em;
+}
+
+
+.divContact span{
+    font-weight: bold;
+}
+footer a{
+    color: white;
+
+}
+
+/* ANIMATIONS */
+.divLinks li:hover{
+    transform: scale(1.1);
+
+}
+
+.divLinks a:hover{
+    text-decoration: underline;
+
+}
+
+.divLinks li:hover > ul{
+    display: block;
+}
+
+main section a:hover{
+    color: #aa7a56;
+    font-weight: bold;
+}
+
+footer a:hover{
+    color: lightgray;
+    font-weight: bold;
+}
+
+/*
+nav:hover{
+    background-color: hsl(0, 0%, 50%, 0.2);
+}*/
+

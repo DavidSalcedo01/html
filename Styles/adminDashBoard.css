@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dosis', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+header{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    background-color: #694B34;
+    height: 102vh;
+    width: 18%;
+    min-width: 5vw;
+    overflow: hidden;
+}
+
+header img{
+    margin-top: 4.5vh;
+    margin-bottom: 3.5vh;
+    height: 3.5vh;
+    width: 6vw;
+}
+
+nav ul, li{
+    list-style: none;
+    display: inline-block;
+}
+
+.divLinks li a{
+    padding-right: 4em;
+    padding-left: 4.5vw;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1vw;
+    font-weight: bold;
+    display: block;
+}
+
+.divLinks ul > li{
+    padding-top: 1vh;
+}
+
+.divLinks ul > li a{
+    color: #004346;
+    font-weight: lighter;
+
+}
+
+.divLinks li ul{
+    display: block;
+    text-align: center;
+    padding-bottom: 3.5vh;
+}
+
+.divLinks svg{
+    fill:#ffffff;
+    margin-left: 0.3em;
+    font-size: 0.8em;
+}
+main{
+    display: flex;
+    flex-flow: row wrap;
+    width: 82%;
+    padding-left: 4em;
+    padding-right: 4em;
+    background-color: #e3e3e3;
+}
+.AreaDiv{
+    position: relative;
+    margin: 2vw;
+    background-color: #e3e3e3;
+    border-radius: 1em;
+    height: 90vh;
+    width: 70vw;
+}
+
+/* ANIMATIONS */
+.divLinks a:hover{
+    text-shadow: #005C61 1px 0 10px;
+
+}

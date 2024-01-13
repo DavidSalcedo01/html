@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                ['año', 'Ventas', 'Gastos'],
+                ['2020',  1000,      400],
+                ['2021',  1170,      460],
+                ['2022',  660,       1120],
+                ['2023',  1030,      540]
+            ]);
+
+            var options = {
+                title: 'Desempeño anual',
+                hAxis: {title: 'año',  titleTextStyle: {color: '#333'}},
+                backgroundColor: '#ffffff',
+                vAxis: {minValue: 0}
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+    
+        function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                ['Productos', 'por dia'],
+                ['Ropa',     11],
+                ['Zapatos',      7],
+                ['Joyería',  5],
+            ]);
+        
+            var options = {
+                backgroundColor: '#ffffff',
+                title: 'Productos mas vendidos'
+            };
+        
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                chart.draw(data, options);
+        }
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages':['geochart'],
+        });
+        google.charts.setOnLoadCallback(drawRegionsMap);
+
+        function drawRegionsMap() {
+            var data = google.visualization.arrayToDataTable([
+                ['Pais', 'Ventas'],
+                ['Germany', 200],
+                ['United States', 300],
+                ['Brazil', 400],
+                ['Canada', 500],
+                ['France', 600],
+                ['Mexico', 700],
+                ['Australia', 300]
+            ]);
+
+            var options = {};
+            var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+            chart.draw(data, options);
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/adminDashBoard.css">
+    <link rel="shortcut icon" href="Images/logoIcon.png" />
+    <title>DashBoard - Saloc</title>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="Images/logoSaloc2.png" alt="Saloc"/></a>
+        <nav>
+            <ul class="divLinks">
+                <li class="act"><a href="#">Agregar productos
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                            <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+                        </svg>
+                    </a>
+                    <ul>
+                        <li><a href="addProduct.php?type=clothes">Ropa</a></li>
+                        <li><a href="addProduct.php?type=shoes">Zapatos</a></li>
+                        <li><a href="addProduct.php?type=jewelry">Joyería</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">Eliminar productos
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                            <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+                        </svg>
+                    </a>
+                    <ul>
+                        <li><a href="deleteProduct.php?type=clothes">Ropa</a></li>
+                        <li><a href="deleteProduct.php?type=shoes">Zapatos</a></li>
+                        <li><a href="deleteProduct.php?type=jewelry">Joyería</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">Modificar productos
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                            <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+                        </svg>
+                    </a>
+                    <ul>
+                        <li><a href="modifyProduct.php?type=clothes">Ropa</a></li>
+                        <li><a href="modifyProduct.php?type=shoes">Zapatos</a></li>
+                        <li><a href="modifyProduct.php?type=jewelry">Joyería</a></li>
+                    </ul>
+                </li>
+                <li><a href="binnaclesProducts.php" style="padding-bottom: 3.5vh;">Bitácora productos</a></li>
+                <li><a href="#">Control de usuarios
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                            <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+                        </svg>
+                    </a>
+                    <ul>
+                        <li><a href="deleteUser.php">Eliminar usuario</a></li>
+                        <li><a href="modifyUser.html">Modificar usuario</a></li>
+                    </ul>
+                </li>
+                <li><a href="binnaclesUsers.php">Bitácora usuarios</a></li>
+
+                <li><a href="index.html" style="margin-top: 1.5vh;">Salir</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="chart_div" style="width: 67em; height: 27em;  padding-top: 1em;"></div>
+        <div id="piechart" style="width: 30em; height: 20em;  padding-top: 1em; padding-bottom: 1em;"></div>
+        <div id="regions_div" style="width: 33em; height: 20em; margin-left: 4em;  padding-top: 1em; padding-bottom: 1em;"></div>
+    </main>
+</body>
+</html>

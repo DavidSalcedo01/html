@@ -1,0 +1,177 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Dosis', sans-serif;
+}
+
+.logoBar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.5em;
+    width: 100%;
+    overflow: hidden;
+    background-color: gray;
+}
+
+.logoBar img{
+    height: 60%;
+    width: 90px;
+    padding: 5px;
+    min-width: 90px;
+    min-height: 45%;
+    max-width: 95px;
+    max-height: 45%;
+}
+
+.serchBar{
+    height: 50px;
+    width: 100%;
+    background-color: #d3d3d3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.shapeInput{
+    position: relative;
+    width: 260px;
+    height: 63%;
+    background-color: white;
+    border-radius: 60px;
+    min-width: 260px;
+    min-height: 63%;
+    max-width: 260px;
+    max-height: 63%;
+}
+
+.serchForm input {
+    background: transparent;
+    width: 84%;
+    border: 0;
+    padding: 8px;
+    outline: none;
+
+}
+
+.serchForm button{
+    position: absolute;
+    right: 0;
+    border-radius: 50%;
+    height: 100%;
+    width: 11%;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    overflow: hidden;
+}
+
+.serchButton{
+    height: 13px;
+    padding-top: 18%;
+}
+
+main{
+    margin-top: 5em;
+    margin-bottom: 5em;
+    width: 100%;
+    /*margin: 0 auto;*/
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.products{
+    position: relative;
+    margin: 10px;
+    border-radius: 7px;
+    height: 50vh;
+    width: 20vw;
+    background-color: beige;  
+    overflow: hidden;
+}
+
+.products img{
+    position: absolute;
+    height: 66%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.products h1{
+    position: absolute;
+    bottom: 40px;
+    color: brown;
+    font-size: large;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 9px;
+    padding-bottom: 1em;
+}
+
+.products p{
+    position: absolute;
+    bottom: 8px;
+    color: black;
+    font-size: medium;
+    text-align: left;
+    padding-left: 9px;
+    padding-bottom: 1em;
+}
+
+footer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: #694B34;
+    padding: 3em;
+    width: 100%;
+    min-height: 15em;
+    color: white;
+    text-align: justify;
+    font-size: 1em;
+}
+
+footer img{
+    height: 2em;
+    width: 7em;
+    margin-bottom: 2em;
+}
+
+.divContact p{
+    padding-bottom: 0.5em;
+    width: 41em;
+}
+.divInfo{
+    margin-top: 2em;
+    width: 41em;
+}
+
+
+.divContact span{
+    font-weight: bold;
+}
+footer a{
+    color: white;
+
+}
+/* ANIMATIONS */
+
+button:hover{
+    background-color: #004346;
+}
+
+.products:hover img{
+    height: 71%;
+    width: 105%;
+}
+
+footer a:hover{
+    color: lightgray;
+    font-weight: bold;
+}
+
