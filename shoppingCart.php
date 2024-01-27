@@ -3,7 +3,7 @@
     session_start();
     global $total, $subTotal, $user;
     if(!isset($_SESSION['user'])){
-        header("Location: login.html");
+        header("Location: Login.html");
     }
     else{
         $user = $_SESSION['user'];
@@ -14,6 +14,7 @@
         }
         $total = $subTotal + 120;
     }
+
 ?>
 
 <!DOCTYPE html>

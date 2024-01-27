@@ -2,10 +2,11 @@
     require_once "Connection.php";
     date_default_timezone_set('America/Mexico_city');
     session_start();
+    global $src;
     $prName = $_GET['prName'];
     $type = $_GET['type'];
     if(!isset($_SESSION['user'])){
-        header("Location: login.html");
+        header("Location: Login.html");
     }
     else{
         $user = $_SESSION['user'];
@@ -16,14 +17,15 @@
 
     $sqlProduct = mysqli_query($connection, "SELECT * FROM `$type` WHERE productName='$prName'");
     $summ = mysqli_fetch_assoc($sqlProduct);
-    if ($type != "Jewelry") {
+    if ($type != "jewelry") {
         $sizes = $summ['sizes'];
     }
+    $src = "Images/".$type."/".$summ['image'];
 
 
     if(isset($_POST['btnSubmit'])){
         if(!isset($_SESSION['user'])){
-            header("Location: login.html");
+            header("Location: Login.html");
         }
         else{
             $user = $_SESSION['user'];
@@ -72,62 +74,62 @@
     </header>
     <main>
         <div class="divProduct">
-            <img src="Images/<?php echo $type; ?>/<?php echo $summ['image']; ?>" alt="Clothes">
+            <img src="<?php echo $src; ?>"  alt="Clothes">
             <div class="divCont">
                 <h1><?php echo $summ['productName']; ?></h1>
                 <p id="description"><?php echo $summ['description']; ?></p>
                 <p id="price">MXN <?php echo $summ['price']; ?></p>
                 <form action="" method="post">
                     <?php
-                        if ($type != "Jewelry") { ?>
+                        if ($type != "jewelry") { ?>
                             <label for="sizes">Tallas:</label>
                             <select name="sizes" id="sizes" required>
-                            <?php 
-                                if ($type == "Clothes") {
-                                    if(str_contains($sizes, 'XS')){
+                            <?php
+                                if ($type == "clothes"){
+                                    //if (str_contains($sizes, 'XS')){
                                         echo '<option value="XS">XS</option>';
-                                    }
-                                    if(str_contains($sizes, 'S')){
+                                    //}
+                                    //if (str_contains($sizes, 'S')){
                                         echo '<option value="S">S</option>';
-                                    }
-                                    if(str_contains($sizes, 'M')){
+                                    //}
+                                    //if (str_contains($sizes, 'M')){
                                         echo '<option value="M">M</option>';
-                                    } 
-                                    if(str_contains($sizes, 'L')){
-                                    echo '<option value="L">L</option>';
-                                    }
-                                    if(str_contains($sizes, 'XL')){
+                                    //}
+                                    //if (str_contains($sizes, 'L')){
+                                    	echo '<option value="L">L</option>';
+                                    //}
+                                    //if (str_contains($sizes, 'XL')){
                                         echo '<option value="XL">XL</option>';
-                                    }
+                                    //}
                                 }
-                                if ($type == "Shoes") {
-                                    if(str_contains($sizes, '22')){
+                                if ($type == "shoes") {
+                                    //if (str_contains($sizes, '22')){
                                         echo '<option value="22">22</option>';
-                                    }
-                                    if(str_contains($sizes, '22.5')){
+                                    //}
+                                    //if (str_contains($sizes, '22.5')){
                                         echo '<option value="22.5">22.5</option>';
-                                    }
-                                    if(str_contains($sizes, '23')){
+                                    //}
+                                    //if (str_contains($sizes, '23')){
                                         echo '<option value="23">23</option>';
-                                    } 
-                                    if(str_contains($sizes, '23.5')){
-                                    echo '<option value="23.5">23.5</option>';
-                                    }
-                                    if(str_contains($sizes, '24')){
+                                    //}
+                                    //if (str_contains($sizes, '23.5')){
+                                    	echo '<option value="23.5">23.5</option>';
+                                    //}
+                                    //if (str_contains($sizes, '24')){
                                         echo '<option value="24">24</option>';
-                                    }
-                                    if(str_contains($sizes, '24.5')){
+                                    //}
+                                    //if (str_contains($sizes, '24.5')){
                                         echo '<option value="24.5">24.5</option>';
-                                    }
-                                    if(str_contains($sizes, '25')){
+                                    //}
+                                    //if (str_contains($sizes, '25')){
                                         echo '<option value="25">25</option>';
-                                    }
-                                    if(str_contains($sizes, '25.5')){
+                                    //}
+                                    //if (str_contains($sizes, '25.5')){
                                         echo '<option value="25.5">25.5</option>';
-                                    }
-                                    if(str_contains($sizes, '26')){
+                                    //}
+                                    //if (str_contains($sizes, '26')){
                                         echo '<option value="26">26</option>';
-                                    }
+                                    //}
                                 }
                             ?>
                             </select><br>

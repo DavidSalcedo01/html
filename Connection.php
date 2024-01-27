@@ -1,8 +1,8 @@
 <?php 
     $SERVER_NAME = "localhost";
     $DATABASE = "globalweb";
-    $USERNAME = "root";
-    $PASSWORD = "";
+    $USERNAME = "david";
+    $PASSWORD = "1234";
 
     $connection = mysqli_connect($SERVER_NAME, $USERNAME, $PASSWORD, $DATABASE);
 

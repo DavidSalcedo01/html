@@ -31,9 +31,9 @@
                 while ($data = mysqli_fetch_assoc($sql)) {
                     ?>
                         <div class="contProducts">
-                            <a href="productDetails.php?type=Clothes&prName=<?php echo $data['productName'];?>">
+                            <a href="productDetails.php?type=clothes&prName=<?php echo $data['productName'];?>">
                                 <div class="products">
-                                    <img src="Images/Clothes/<?php echo $data['image']; ?>" alt="ProductImage">
+                                    <img src="Images/clothes/<?php echo $data['image']; ?>" alt="ProductImage">
                                     <h1><?php echo $data['productName'];?></h1>
                                     <p><?php echo $data['price'];?></p>
                                 </div>
@@ -48,9 +48,9 @@
                 while ($data = mysqli_fetch_assoc($sql)) {
                     ?>
                         <div class="contProducts">
-                            <a href="productDetails.php?type=Shoes&prName=<?php echo $data['productName'];?>">
+                            <a href="productDetails.php?type=shoes&prName=<?php echo $data['productName'];?>">
                                 <div class="products">
-                                    <img src="Images/Shoes/<?php echo $data['image']; ?>" alt="ProductImage">
+                                    <img src="Images/shoes/<?php echo $data['image']; ?>" alt="ProductImage">
                                     <h1><?php echo $data['productName']; ?></h1>
                                     <p><?php echo $data['price'];?></p>
                                 </div>
@@ -64,9 +64,9 @@
                 while ($data = mysqli_fetch_assoc($sql)) {
                     ?>
                         <div class="contProducts">
-                            <a href="productDetails.php?type=Jewelry&prName=<?php echo $data['productName'];?>">
+                            <a href="productDetails.php?type=jewelry&prName=<?php echo $data['productName'];?>">
                                 <div class="products">
-                                    <img src="Images/Jewelry/<?php echo $data['image']; ?>" alt="ProductImage">
+                                    <img src="Images/jewelry/<?php echo $data['image']; ?>" alt="ProductImage">
                                     <h1><?php echo $data['productName']; ?></h1>
                                     <p><?php echo $data['price'];?></p>
                                 </div>
