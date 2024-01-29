@@ -2,7 +2,7 @@
 require('Library/fpdf/fpdf.php');
 require_once "Connection.php";
 include 'emailSender.php';
-
+date_default_timezone_set('America/Mexico_city');
 
     session_start();
     global $subTotal, $total;
@@ -11,14 +11,14 @@ include 'emailSender.php';
     }
     else{
         if(isset($_POST['btnSubmit']))
-        {   
+        {
             $user = $_SESSION['user'];
             $subTotal = $_POST['subtotal'];
             $total = $_POST['total'];
 
             $sql = mysqli_query($connection, "SELECT * FROM `users` WHERE email='$user'");
             $data = mysqli_fetch_assoc($sql);
-        
+
             $sqlProduct = mysqli_query($connection, "SELECT * FROM sales WHERE costumerUser='$user'");
             ob_start();
         }
@@ -60,7 +60,7 @@ $pdf->SetTextColor(105, 75, 52);
 $pdf->Cell(0, 10, 'Resumen de Compra', 0, 1, 'C');
 
 // Agregar subtítulos
-$pdf->Ln(3); 
+$pdf->Ln(3);
 $pdf->SetFont('Arial', 'B', 14);
 $pdf->SetTextColor(0, 67, 70);
 $pdf->Cell(0, 10, 'Datos Personales', 0, 1, 'L');
@@ -73,7 +73,7 @@ Estado: '.$data['state'].'
 Calle: '.$data['addressStreet'].'
 Ciudad: '.$data['city']);
 
-$pdf->Ln(4);  
+$pdf->Ln(4);
 $pdf->SetFont('Arial', 'B', 14);
 $pdf->SetTextColor(0, 67, 70);
 $pdf->Cell(0, 10, 'Productos Comprados', 0, 1, 'L');
@@ -103,12 +103,19 @@ $pdf->SetDrawColor(255, 255, 255);
 $pdf->Cell(40, 9, '', 1, 0, 'C', 1);
 $pdf->Cell(30, 9, '', 1, 0, 'C', 1);
 $pdf->SetDrawColor(105, 75, 52);
-$pdf->SetFillColor(211, 211, 211); 
+$pdf->SetFillColor(211, 211, 211);
 $pdf->Cell(30, 9, 'Total', 1, 0, 1);
 $pdf->Cell(30, 9, $total, 1, 0, 1);
 
-$pdfFile = 'ComprobanteSaloc.pdf';
+$date = date("Y-m-d_H:i:s");
+$pdfFile = 'ComprobanteSaloc_'.$date.'.pdf';
 $pdf->Output($pdfFile, 'F');
+
+$url='http://10.0.2.4/comprobantes/';
+$user='david:1234';
+
+$command = "curl --upload-file $pdfFile -u $user $url";
+exec($command, $output, $exitCode);
 
 sendEmail($pdfFile);
 mysqli_close($connection);
